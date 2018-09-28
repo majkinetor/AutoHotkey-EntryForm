@@ -25,6 +25,7 @@
  *     -F <function> OR Ffunction          - callback function
  *     -pos | -p <pos> OR [Xn, Yn, Wn]     - window position when shown
  *     -opt | -o <options> OR [options...] - standard GUI options
+ *     -clr <color>			   - standard Gui color
  * Fields* parameter options:
  *     -p <prompt>                         - prompt
  *     -d <default>                        - default text
