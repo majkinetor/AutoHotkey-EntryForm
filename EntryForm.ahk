@@ -158,6 +158,9 @@ EntryForm(form, fields*) {
 			else if (opt == "-F") ;// case-sensitive
 				form[ key := "callback" ] := ""
 
+			else if (opt == "-l")
+				key := "color"
+
 			else if ( opt ~= (is_v2? "i)^f[a-z_]\w*$" : "i)^f[a-z0-9_@]+$") )
 				form.callback := Func(SubStr(opt, 2))
 
@@ -177,6 +180,8 @@ EntryForm(form, fields*) {
 
 	;// Create EntryForm window
 	Gui New, % "+HwndhForm +LabelEF_ " . form.options
+	if (form.color) 
+		Gui Color, % form.color
 	
 	;// Initialize font, InputBox uses 's10, MS Shell Dlg 2' on OS >= WIN_7??
 	form.font := form.HasKey("font") ? StrSplit(form.font, ",", " `t`r`n")
